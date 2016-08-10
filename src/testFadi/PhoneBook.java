@@ -6,11 +6,16 @@ public class PhoneBook {
 	String personName;
 	String phoneNumber;
 
+	public PhoneBook()
+	{
+			
+	}
+			
 	public PhoneBook(int i, String personName, String phoneNumber) {
 		super();
 		this.id = i;
 		this.personName = personName;
-		this.phoneNumber = phoneNumber;
+		this.phoneNumber = phoneNumber;		
 	}
 
 	public int getId() {
@@ -35,6 +40,15 @@ public class PhoneBook {
 
 	public void setphoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+	
+	public static int insertPhoneBook(PhoneBook phoneBook)
+	{		
+		 sqlConnection conn = new sqlConnection();
+		 conn.openConnection();
+		 conn.InsertNumber(phoneBook.personName, phoneBook.phoneNumber);
+		 conn.closeConnection();
+		return 1;
 	}
 
 }

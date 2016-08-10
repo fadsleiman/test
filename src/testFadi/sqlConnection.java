@@ -84,7 +84,7 @@ public class sqlConnection {
 	{
 		try
 		{
-			String sql="insert into tbData (Name , PhoneNumber) values ('"+ name + "',' " + number+ "')";
+			String sql="insert into tbData (Name , PhoneNumber) values ('"+ name + "','" + number+ "')";
 		   st.executeUpdate(sql);
 		}
 		catch (SQLException e)
